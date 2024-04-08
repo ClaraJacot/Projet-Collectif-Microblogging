@@ -126,6 +126,7 @@ Cette commande génère une clé qui est ensuite stockée dans la variable `APP_
 ```
 php artisan serve
 ```
+UPDATE !! php artisan serve --host=0.0.0.0
 
 Vous devriez voir la page par défaut de Laravel en ouvrant l'url indiquée (http://127.0.0.1:8000 si tout se passe bien).
 
