@@ -12,6 +12,7 @@
         <!-- Scripts -->
     </head>
     <body>
+      @csrf
       <h1>Hello world</h1>
       <div>
         @foreach ($posts as $post)

@@ -30,15 +30,19 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get ('/posts/{id}',[PostController::class, 'show'])->name('postsShow')->whereNumber('id');
+Route::get ('/posts/create',[PostController::class,'create'])->name('postsCreate');
 
-Route::get ('/posts/{post}',[PostController::class, 'show'])->name('postsShow');
 
-Route::get ('/posts',[PostController::class, 'index'])->name('postIndex');
+Route::get ('/posts',[PostController::class, 'index'])->name('postsIndex');
 
 Route::get('/users',[UserController::class, 'index'])->name('usersIndex');
 
 Route::get ('/users/{user}',[UserController::class, 'show'])->name('usersShow');
 
+
+
+Route::post('/posts',[PostController::class,'store'])->name('postsStore');
     
 
 

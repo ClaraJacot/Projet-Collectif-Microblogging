@@ -12,9 +12,23 @@ class PostController extends Controller
         return view("posts.postIndex", compact("posts"));
     }
 
-    public function create() { }
+    public function create() { 
+        return view("posts.postsCreate");
+    }
 
-    public function store(Request $request) { }
+    public function store(Request $request) { 
+        $this->validate($request, [
+            'titre' => 'bail|required|string|max:255',
+            'texte' => 'bail|required',
+            'user_id'=> 'bail|required',
+        ]);
+        $post = Post::create([
+            "titre" => $request->titre,
+            "texte" => $request->texte,
+            "user_id"=> $request->user_id,
+        ]);
+        return redirect()->route("postsIndex")->with("success","");
+    }
 
     public function show($id) {
         $post = Post::find($id);
