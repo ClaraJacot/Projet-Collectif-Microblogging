@@ -1,31 +1,21 @@
-<x-app-layout>
-  <x-slot name="header">
+<section>
+  <div class="px-25" >
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
         Tous les posts
     </h2>
-</x-slot>
+  </div>
    
-<div class="gap-4 py-12">
-  @foreach ($posts as $post) 
-  <div class="py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-          
+    <div class="grid grid-cols-2 gap-4 py-6">
+    @foreach ($posts as $post) 
+    <div class="py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 text-gray-900 dark:text-gray-100">
           <h3 class="font-bold text-lg">{{ $post->titre}}</h3>
           <p>{{ $post->texte }}</p>  
-          </div>
-          
+        </div> 
       </div>
-  </div>
+    </div>
   @endforeach  
 </div>
-    
-        
-       
-        
-     
-        
-      
-      
-   
-</x-app-layout>
+
+</section>
