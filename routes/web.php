@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/myProfile', function () {
+    return view('myProfile');
+})->name('myProfile');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -34,7 +38,7 @@ Route::get ('/posts/{id}',[PostController::class, 'show'])->name('postsShow')->w
 Route::get ('/posts/create',[PostController::class,'create'])->name('postsCreate');
 
 
-Route::get ('/posts',[PostController::class, 'index'])->name('postsIndex');
+Route::get ('/posts',[PostController::class, 'index'])->name('postIndex');
 
 Route::get('/users',[UserController::class, 'index'])->name('usersIndex');
 
