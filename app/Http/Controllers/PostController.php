@@ -27,7 +27,7 @@ class PostController extends Controller
             "texte" => $request->texte,
             "user_id"=> $request->user_id,
         ]);
-        return redirect()->route("postsIndex")->with("success","");
+        return redirect()->route("postIndex")->with("success","");
     }
 
     public function show($id) {
