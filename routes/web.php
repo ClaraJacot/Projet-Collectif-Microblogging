@@ -35,8 +35,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::get ('/posts/{id}',[PostController::class, 'show'])->name('postsShow')->whereNumber('id');
 Route::get ('/posts/create',[PostController::class,'create'])->name('postsCreate');
-
-
+Route::get ('/posts/{id}/edit',[PostController::class, 'edit'])->name('postsEdit')->whereNumber('id');
+Route::patch ('/posts/{id}',[PostController::class, 'update'])->name('postsUpdate')->whereNumber('id');
 Route::get ('/posts',[PostController::class, 'index'])->name('postIndex');
 
 Route::get('/users',[UserController::class, 'index'])->name('usersIndex');

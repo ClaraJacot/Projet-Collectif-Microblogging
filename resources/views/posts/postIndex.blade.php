@@ -14,6 +14,11 @@
           <p>{{ $post->texte }}</p>  
         </div> 
       </div>
+      @if (Auth::user()->id === $post->user_id)
+      <a href="{{ route('postsEdit',["id" => $post->id]) }}">
+      <x-primary-button>{{ __('Edit') }}</x-primary-button>
+      </a>
+      @endif
     </div>
   @endforeach  
 </div>

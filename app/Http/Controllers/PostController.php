@@ -27,7 +27,7 @@ class PostController extends Controller
             "texte" => $request->texte,
             "user_id"=> $request->user_id,
         ]);
-        return redirect()->route("postIndex")->with("success","");
+        return redirect()->route("myProfile")->with("success","");
     }
 
     public function show($id) {
@@ -35,9 +35,22 @@ class PostController extends Controller
         return view("posts.postsShow",compact ("post"));
      }
 
-    public function edit(Post $post) { }
+    public function edit($id) {
+        $post = Post::find($id);
+        return view("posts.postsEdit",compact ("post"));
+     }
 
-    public function update(Request $request, Post $post) { }
+    public function update(Request $request, $id) { 
+        $rules=[
+            'titre' => 'bail|required|string|max:255',
+            'texte'=> 'bail|required',
+        ];
+        $this->validate($request, $rules);
+        $post = Post::find($id);
+        $post->update($request->all());
+
+        return redirect()->route('dashboard');
+    }
 
     public function destroy(Post $post) { }
 }
