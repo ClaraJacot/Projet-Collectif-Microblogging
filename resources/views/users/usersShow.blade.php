@@ -1,7 +1,7 @@
 <section>
-      <h2>Hello {{ $user->name }}</h2>
+      <h2> {{ $user->name }}'s wall</h2>
       
-      <h3>Your biography : </h3>
+      <h3>Biography : </h3>
       <p>"{{$user->biography}}"</p>
 </section>    
      
