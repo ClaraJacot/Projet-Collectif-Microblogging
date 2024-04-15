@@ -11,8 +11,9 @@ class MyProfileController extends Controller
 {
     public function show($id) {
       $user = User::find($id);
-      Log::error('Showing the user profile for user: '.$id);
       $posts = Post::where('user_id', $user->id)->latest()->get();
       return view("myProfile",compact("user","posts"));
      }
+
+     
 }

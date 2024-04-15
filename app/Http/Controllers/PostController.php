@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index() { 
-        //User::join('posts', 'users.id', '=', 'posts.user_id')->select('users.name')->get();
         $posts = Post::latest()->get();
         return view("posts.postIndex", compact("posts"));
     }
@@ -30,7 +29,7 @@ class PostController extends Controller
             "texte" => $request->texte,
             "user_id"=> $request->user_id,
         ]);
-        return redirect()->route("myProfile")->with("success","");
+        return redirect()->route("myProfile",['id'=>Auth::user()->id])->with("success","");
     }
 
     public function show($id) {
@@ -55,5 +54,9 @@ class PostController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function destroy(Post $post) { }
+    public function destroy($id) { 
+        $post = Post::find($id);
+        $post->delete();
+        return redirect(route('myProfile',['id'=>Auth::user()->id]));
+    }
 }

@@ -38,14 +38,15 @@ Route::get ('/posts/create',[PostController::class,'create'])->name('postsCreate
 Route::get ('/posts/{id}/edit',[PostController::class, 'edit'])->name('postsEdit')->whereNumber('id');
 Route::patch ('/posts/{id}',[PostController::class, 'update'])->name('postsUpdate')->whereNumber('id');
 Route::get ('/posts',[PostController::class, 'index'])->name('postIndex');
+Route::delete('posts/{id}',[PostController::class,'destroy'])->name('postsDestroy')->whereNumber('id');
+Route::post('/posts',[PostController::class,'store'])->name('postsStore');
 
 Route::get('/users',[UserController::class, 'index'])->name('usersIndex');
-
 Route::get ('/users/{user}',[UserController::class, 'show'])->name('usersShow');
 
 
 
-Route::post('/posts',[PostController::class,'store'])->name('postsStore');
+
     
 
 
