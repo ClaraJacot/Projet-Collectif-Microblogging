@@ -34,7 +34,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('myProfile')">
+                        <x-dropdown-link :href="route('myProfile',['id'=>Auth::user()->id])">
                             {{ __('My Profile') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('profile.edit')">

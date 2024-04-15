@@ -11,7 +11,10 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 text-gray-900 dark:text-gray-100">
           <h3 class="font-bold text-lg">{{ $post->titre}}</h3>
-          <p>{{ $post->texte }}</p>  
+          <p>{{ $post->texte }}</p> 
+          <a href="{{ route('myProfile',["id" => $post->user_id]) }}">
+            <p>{{$post->name}} </p>
+          </a>
         </div> 
       </div>
       @if (Auth::user()->id === $post->user_id)

@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/myProfile', [MyProfileController::class, 'show'])->middleware(['auth', 'verified'])->name('myProfile');
+Route::get('/myProfile/{id}', [MyProfileController::class, 'show'])->middleware(['auth', 'verified'])->name('myProfile')->whereNumber('id');
 
 
 Route::middleware('auth')->group(function () {

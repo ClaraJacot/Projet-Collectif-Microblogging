@@ -23,7 +23,7 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
         {{--<p>hello {{$user->id}}</p>--}}
-        <p>hello {{$toto}}</p>
+        {{--<p>hello {{$toto}}</p>--}}
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
