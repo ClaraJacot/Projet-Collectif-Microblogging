@@ -34,7 +34,7 @@
 
             <div class="w-screen flex justify-center">
                 <div class="m-16">
-                <h1 class=" sm:text-xl md:text-4xl lg:text-7xl text-gray-900 flex justify-center dark:text-gray-200">Microblogging</h1>
+                <h1 class=" sm:text-xl md:text-4xl lg:text-7xl flex justify-center dark:text-gray-200">Microblogging</h1>
                    <div class=" grid grid-cols-none md:grid-cols-2 lg:grid-cols-2 m-4">
                    <div class="flex justify-center">
                     <img src="/images/blog-3.jpg" class="w-auto h-48 justify-center" alt="image de blog"/>
