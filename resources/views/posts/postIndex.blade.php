@@ -9,10 +9,10 @@
           <div class="p-6 text-gray-900 dark:text-gray-100 flex-grow">
             <h3 class="font-bold text-lg text-center p-6 uppercase">{{ $post->titre}}</h3>
           <div class=" flex justify-center p-2">
-           <img src={{$post->picture}}>
+           <img src="{{ asset('storage/'.$post->picture)}}">
          </div>
             <p class="p-0 md:p-4 lg:p-4 text-center flex flex-grow items-center justify-center">{{ $post->texte }}</p>
-
+            <p>{{$post->id}}</p>
           </div>        
 
         </div>           
@@ -29,13 +29,19 @@
           <x-danger-button
               x-data=""
               x-on:click.prevent="$dispatch('open-modal', 'confirm-post-deletion')"
-              >{{ __('Supprimer') }}</x-danger-button>
-            
+              >
+              <input type="hidden" name="postid" id="postid" value="{{$post->id}}">{{ __('Supprimer ') }}{{$post->id}}</x-danger-button>
+          
         </div>
-        <x-modal name="confirm-post-deletion" focusable>
+        @endif
+    </div>
+    @endforeach
+  </div>
+  <x-modal  name="confirm-post-deletion"  focusable>
           <form action="{{ route('postsDestroy',["id" => $post->id]) }}" method="post" class="p-6">
             @csrf
             @method('DELETE')
+           <p>{{$post->id}}</p>
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
               {{ __('Etes vous sûr de vouloir supprimer ce post?') }}
             </h2>
@@ -52,8 +58,5 @@
             </div>
         </form>
       </x-modal>
-        @endif
-    </div>
-    @endforeach
-  </div>
 </section>
+
