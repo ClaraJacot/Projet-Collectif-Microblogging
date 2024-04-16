@@ -10,7 +10,7 @@
        
             <div class=" overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-center px-8 mx-8 text-gray-900 dark:text-gray-100">
-                    Welcome {{Auth::user()->name}}
+                    Bienvenue {{Auth::user()->name}}
                 </div>
             </div>
     

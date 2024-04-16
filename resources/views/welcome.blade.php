@@ -17,35 +17,36 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
+        <div class="flex items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            {{-- @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Se connecter</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Créer un compte</a>
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif --}}
 
             <div class="w-screen flex justify-center">
                 <div class="m-16">
-                <h1 class=" sm:text-xl md:text-4xl lg:text-7xl flex justify-center dark:text-gray-200">Microblogging</h1>
+                    <div class="text-4xl lg:text-7xl flex justify-center dark:text-gray-200">
+                <h1>Microblogging</h1></div>
                    <div class=" grid grid-cols-none md:grid-cols-2 lg:grid-cols-2 m-4">
                    <div class="flex justify-center">
                     <img src="/images/blog-3.jpg" class="w-auto h-48 justify-center" alt="image de blog"/>
                    </div>
-                    
-                     <p class="m-4 text-lg dark:text-gray-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ultricies odio. Nam id condimentum nunc.</br>Etiam non risus eget eros congue placerat.</br> Duis id ligula auctor, auctor est eget, congue turpis.</p> 
+                   <div class="justify-center m-4 text-lg dark:text-gray-200 text-center sm:text-center md:text-left lg:text-left flex items-center ">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ultricies odio. Nam id condimentum nunc.</br>Etiam non risus eget eros congue placerat.</br> Duis id ligula auctor, auctor est eget, congue turpis.</div>
                    </div>
                    <div class="flex justify-center">
-                   <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('login') }}'" >Log in</button>
+                   <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('login') }}'" >Se connecter</button>
 
-                    <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('register') }}'" >Register</button>
+                    <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('register') }}'" >Créer un compte</button>
                    </div>
                    
                 </div>
