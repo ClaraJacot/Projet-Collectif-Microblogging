@@ -32,17 +32,20 @@
                 </div>
             @endif
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+            <div class="w-screen flex justify-center">
                 <div class="m-16">
-                <h1 class="text-9xl text-gray-900 flex justify-center">Microblogging</h1>
-                   <div class="flex justify-center m-4">
-                     <img src="/images/blog-3.jpg" class="w-6/12" alt="image de blog"/>
-                     <p class="m-4 text-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ultricies odio. Nam id condimentum nunc.</br>Etiam non risus eget eros congue placerat.</br> Duis id ligula auctor, auctor est eget, congue turpis.</p> 
+                <h1 class=" sm:text-xl md:text-4xl lg:text-7xl text-gray-900 flex justify-center dark:text-gray-200">Microblogging</h1>
+                   <div class=" grid grid-cols-none md:grid-cols-2 lg:grid-cols-2 m-4">
+                   <div class="flex justify-center">
+                    <img src="/images/blog-3.jpg" class="w-auto h-48 justify-center" alt="image de blog"/>
+                   </div>
+                    
+                     <p class="m-4 text-lg dark:text-gray-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ultricies odio. Nam id condimentum nunc.</br>Etiam non risus eget eros congue placerat.</br> Duis id ligula auctor, auctor est eget, congue turpis.</p> 
                    </div>
                    <div class="flex justify-center">
-                   <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4" onclick="location.href='{{ route('login') }}'" >Log in</button>
+                   <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('login') }}'" >Log in</button>
 
-                    <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4" onclick="location.href='{{ route('register') }}'" >Register</button>
+                    <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded m-4 dark:bg-gray-200 dark:text-gray-800" onclick="location.href='{{ route('register') }}'" >Register</button>
                    </div>
                    
                 </div>
