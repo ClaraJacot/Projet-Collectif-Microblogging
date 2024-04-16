@@ -20,7 +20,8 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'titre' => $this->faker->title(),
+            'titre' => $this->faker->catchPhrase(),
+            'picture'=> $this->faker->imageUrl(200, 200, null, true),
             'texte' => $this->faker->text(),
             'user_id' => User::inRandomOrder()->first()->id 
         ];

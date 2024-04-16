@@ -21,11 +21,15 @@ class PostController extends Controller
     public function store(Request $request) { 
         $this->validate($request, [
             'titre' => 'bail|required|string|max:255',
+            'picture'=> 'bail|required|image|max:1024',
             'texte' => 'bail|required',
             'user_id'=> 'bail|required',
         ]);
+        $path_image = $request->picture->store('posts');
+
         $post = Post::create([
             "titre" => $request->titre,
+            "picture"=> $path_image,
             "texte" => $request->texte,
             "user_id"=> $request->user_id,
         ]);
