@@ -12,16 +12,16 @@
 
 		</p>
 	   </div>
-	   <div class="flex justify-center text-center p-6">
-	   <p>
-		<label for="picture" >Image</label><br/>
-		<input type="file" name="picture" id="picture" >
+	   <div class="flex flex-col justify-center text-center p-6">
+	   
+		<label for="picture">Image</label><br/>
+		<input class="text-opacity-1" type="file" name="picture" id="picture" >
 
 		<!-- Le message d'erreur pour "picture" -->
 		@error("picture")
 		<div>{{ $message }}</div>
 		@enderror
-	</p>
+	
 	   </div>
 		<div class="flex justify-center text-center p-6">
         <p class="m-2 ">

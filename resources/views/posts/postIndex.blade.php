@@ -26,37 +26,15 @@
                 <x-primary-button>{{ __('Modifier') }}</x-primary-button>
             </a>
             
-          <x-danger-button
-              x-data=""
-              x-on:click.prevent="$dispatch('open-modal', 'confirm-post-deletion')"
-              >
-              <input type="hidden" name="postid" id="postid" value="{{$post->id}}">{{ __('Supprimer ') }}{{$post->id}}</x-danger-button>
+          <x-delete-button :action="route('postsDestroy', $post->id)"/>
+          
+              
           
         </div>
         @endif
     </div>
     @endforeach
   </div>
-  <x-modal  name="confirm-post-deletion"  focusable>
-          <form action="{{ route('postsDestroy',["id" => $post->id]) }}" method="post" class="p-6">
-            @csrf
-            @method('DELETE')
-           <p>{{$post->id}}</p>
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-              {{ __('Etes vous sûr de vouloir supprimer ce post?') }}
-            </h2>
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('La suppression de ce post est définitive.') }}
-            </p>
-            <div class="mt-6 flex justify-end">
-              <x-secondary-button x-on:click="$dispatch('close')">
-                  {{ __('Quitter') }}
-              </x-secondary-button>
-              <x-danger-button class="ms-3">
-                  {{ __('Confirmer la suppression') }}
-              </x-danger-button>
-            </div>
-        </form>
-      </x-modal>
+  
 </section>
 
