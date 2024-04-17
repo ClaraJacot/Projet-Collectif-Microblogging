@@ -1,6 +1,6 @@
 @props(['action', 'buttonText' => __('Supprimer')])
  
-<div x-data="{ initial: true, deleting: false }" class="text-sm flex items-center">
+<div x-data="{ initial: true, deleting: false }" class="text-sm flex items-center mr-2">
     <button
         x-on:click.prevent="deleting = true; initial = false"
         x-show="initial"
@@ -21,7 +21,7 @@
         x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100 transform scale-100"
         x-transition:leave-end="opacity-0 transform scale-90"
-        class="flex items-center space-x-3"
+        class="flex items-start space-x-3"
     >
         <span class="dark:text-white">@lang('Es-tu sûr·e?')</span>
  
