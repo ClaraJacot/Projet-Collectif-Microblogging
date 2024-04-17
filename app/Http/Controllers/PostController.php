@@ -25,7 +25,7 @@ class PostController extends Controller
             'texte' => 'bail|required',
             'user_id'=> 'bail|required',
         ]);
-        $path_image = $request->picture->store('posts');
+        $path_image = $request->picture->store('');
 
         $post = Post::create([
             "titre" => $request->titre,

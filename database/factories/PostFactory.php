@@ -21,7 +21,7 @@ class PostFactory extends Factory
     {
         return [
             'titre' => $this->faker->catchPhrase(),
-            'picture'=> $this->faker->image('storage/app/public/posts',200, 200, null, false, true),
+            'picture'=> $this->faker->image('storage/app/public',200, 200, null, false, true),
             'texte' => $this->faker->text(),
             'user_id' => User::inRandomOrder()->first()->id 
         ];
