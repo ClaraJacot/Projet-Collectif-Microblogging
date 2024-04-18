@@ -50,10 +50,15 @@ class PostController extends Controller
         $rules=[
             'titre' => 'bail|required|string|max:255',
             'texte'=> 'bail|required',
+            'picture'=> 'bail|required|image|max:1024',
         ];
+        $path_image = $request->picture->store('');
         $this->validate($request, $rules);
         $post = Post::find($id);
-        $post->update($request->all());
+        $post->update([
+            "titre" => $request->titre,
+            "picture"=> $path_image,
+            "texte" => $request->texte]);
 
         return redirect()->route('dashboard');
     }

@@ -8,7 +8,7 @@
         <div class="  flex flex-col relative"> 
           <div class="p-6 text-gray-900 dark:text-gray-100 flex-grow">
             <h3 class="font-bold text-lg text-center p-6 uppercase">{{ $post->titre}}</h3>
-          <div class=" flex justify-center p-2">
+          <div class=" flex justify-center p-2 h-96 w-auto">
            <img src="{{ asset('storage/'.$post->picture)}}">
          </div>
             <p class="p-0 md:p-4 lg:p-4 text-center flex flex-grow items-center justify-center">{{ $post->texte }}</p>
