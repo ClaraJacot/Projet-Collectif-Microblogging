@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -52,9 +53,14 @@ class PostController extends Controller
             'texte'=> 'bail|required',
             'picture'=> 'bail|required|image|max:1024',
         ];
-        $path_image = $request->picture->store('');
-        $this->validate($request, $rules);
         $post = Post::find($id);
+
+        $this->validate($request, $rules);
+        
+        Storage::delete($post->picture);
+        $path_image = $request->picture->store('');
+
+        
         $post->update([
             "titre" => $request->titre,
             "picture"=> $path_image,
@@ -65,6 +71,7 @@ class PostController extends Controller
 
     public function destroy($id) { 
         $post = Post::find($id);
+        Storage::delete($post->picture);
         $post->delete();
         return redirect()->back();
     }
