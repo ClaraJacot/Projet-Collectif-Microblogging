@@ -3,10 +3,10 @@
 *Projet collectif en 7 jours à 2/3 personnes, après 6 mois de formation*
 
 🎯 OBJECTIFS :
-    - Découvrir et prendre en main Laravel en mode Fullstack avec Eloquent ORM, Breeze, Blade et PostgrSQL
-    - Consolider notre apprentissage de la POO et de l'architecture MVC
-    - Construire un MVP avec 50% de coverage de test
-    - Expérimenter l'environnement Docker
+- Découvrir et prendre en main Laravel en mode Fullstack avec Eloquent ORM, Breeze, Blade et PostgrSQL
+- Consolider notre apprentissage de la POO et de l'architecture MVC
+- Construire un MVP avec 50% de coverage de test
+- Expérimenter l'environnement Docker
 
 💬 DESCRIPTION :
 
