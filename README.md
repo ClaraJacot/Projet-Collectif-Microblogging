@@ -1,5 +1,19 @@
-# Plateforme de micro-blogging
+# Mignanimo
 
+*Projet collectif en 7 jours à 2/3 personnes, après 6 mois de formation*
+
+🎯 OBJECTIFS :
+    - Découvrir et prendre en main Laravel en mode Fullstack avec Eloquent ORM, Breeze, Blade et PostgrSQL
+    - Consolider notre apprentissage de la POO et de l'architecture MVC
+    - Construire un MVP avec 50% de coverage de test
+    - Expérimenter l'environnement Docker
+
+💬 DESCRIPTION :
+
+Notre site Mignanimo est une plateforme de microblogging "instagram like" qui permet aux utilisateurs·trices de créer un compte, se connecter, poster des messages avec un titre, une image et une description, modifier son profil ou ses posts et consulter le mur des autres. L'authentification est gérée par la bibliothèque Breeze. Le front est réalisé avec Blade et Tailwind.
+
+
+# Plateforme de micro-blogging
 ## [Windows] Pré-requis : installer WSL 2
 
 🟡 Si vous ne l'avez toujours pas fait, installez WSL 2. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
