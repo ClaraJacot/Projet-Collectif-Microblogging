@@ -13,7 +13,7 @@
 Notre site Mignanimo est une plateforme de microblogging "instagram like" qui permet aux utilisateurs·trices de créer un compte, se connecter, poster des messages avec un titre, une image et une description, modifier son profil ou ses posts et consulter le mur des autres. L'authentification est gérée par la bibliothèque Breeze. Le front est réalisé avec Blade et Tailwind.
 
 
-# Plateforme de micro-blogging
+# Guide d'installation du projet Plateforme de micro-blogging
 ## [Windows] Pré-requis : installer WSL 2
 
 🟡 Si vous ne l'avez toujours pas fait, installez WSL 2. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
